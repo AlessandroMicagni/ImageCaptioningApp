@@ -27,7 +27,7 @@ if uploaded_file:
     st.write("### Generating Caption...")
     system_prompt = "Describe the image content in one sentence."
     messages = [
-        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": system_prompt},
         {"role": "user", "content": "Here's an image."},
     ]
 
@@ -35,7 +35,6 @@ if uploaded_file:
         project_id=PROJECT_ID,
         system_prompt=system_prompt,
         messages=messages,
-        repositories=None,  # Optional: Use RAG repositories for contextual responses
     )
 
     caption = response.choices[0].message.content
