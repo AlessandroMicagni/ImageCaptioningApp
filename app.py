@@ -3,8 +3,8 @@ from premai import Prem
 from PIL import Image
 
 # Set up Prem client with API key
-API_KEY = "YOUR_API_KEY"  # Replace with your actual API key
-PROJECT_ID = "YOUR_PROJECT_ID"  # Replace with your Project ID
+API_KEY = "wnvmT1VFtmCnvnbSTFB7z9F9DN6MmID3i1"  # Replace with your actual API key
+PROJECT_ID = "7482"  # Replace with your Project ID
 
 client = Prem(api_key=API_KEY)
 
@@ -18,7 +18,7 @@ uploaded_file = st.sidebar.file_uploader("Choose an image...", type=["jpg", "jpe
 if uploaded_file:
     # Display uploaded image
     image = Image.open(uploaded_file)
-    st.image(image, caption="Uploaded Image", use_column_width=True)
+    st.image(image, caption="Uploaded Image", use_container_width=True)
 
     # Convert the image to bytes for Prem SDK
     image_bytes = uploaded_file.read()
